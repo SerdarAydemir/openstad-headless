@@ -147,6 +147,12 @@ export const WidgetDefinitions: Record<string, WidgetDefinitionEntry> = {
       'Bekijk alle projecten en/of inzendingen van projecten in één overzicht.',
     image: '/widget_preview/multiproject-inzendingenoverzicht-preview.png',
   },
+  fixjeshit: {
+    name: 'Fix Je Shit',
+    description:
+      'Check of jongeren belangrijke zaken geregeld hebben en verwijs ze naar lokale hulp.',
+    image: '/widget_preview/fixjeshit_preview.png',
+  },
   // videoSlider: {
   //   name: 'Video Slider',
   //   description: 'Module voor het tonen van een video slider',

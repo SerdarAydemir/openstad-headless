@@ -36,6 +36,7 @@
     "@openstad-headless/distribution-module": "*",
     "@openstad-headless/document-map": "*",
     "@openstad-headless/enquete": "*",
+    "@openstad-headless/fix-je-shit": "file:../../packages/fix-je-shit",
     "@openstad-headless/leaflet-map": "*",
     "@openstad-headless/likes": "*",
     "@openstad-headless/multi-project-resource-overview": "*",

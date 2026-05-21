@@ -657,6 +657,43 @@ let moduleDefinitions = {
       projectId: null,
     },
   },
+
+  fixjeshit: {
+    packageName: '@openstad-headless/fix-je-shit',
+    directory: 'fix-je-shit',
+    js: ['dist/fix-je-shit.iife.js'],
+    css: ['dist/style.css'],
+    functionName: 'OpenstadHeadlessFixJeShit',
+    componentName: 'FixJeShit',
+    defaultConfig: {
+      projectId: null,
+      inschrijvenTitle: 'Inschrijven bij gemeente',
+      inschrijvenDescription:
+        'Dit moet binnen 5 dagen na verhuizing. Maak een afspraak bij je gemeente.',
+      inschrijvenUrl: '',
+      inschrijvenButtonText: 'Fix dit nu',
+      huurwoningTitle: 'Inschrijven sociale huurwoning',
+      huurwoningDescription:
+        'Schrijf je in voor een sociale huurwoning in je regio.',
+      huurwoningUrl: '',
+      huurwoningButtonText: 'Fix dit nu',
+      geldzakenTitle: 'Hulp bij geldzaken',
+      geldzakenDescription:
+        'De gemeente kan helpen bij geldzorgen of schulden.',
+      geldzakenUrl: '',
+      geldzakenButtonText: 'Bekijk hulp',
+      studietoeslagTitle: 'Studietoeslag',
+      studietoeslagDescription:
+        'Misschien heb je recht op studietoeslag via de gemeente.',
+      studietoeslagUrl: '',
+      studietoeslagButtonText: 'Bekijk regeling',
+      informatieTitle: 'Informatie voor jongeren',
+      informatieDescription:
+        'Informatie over wonen, werk en studie voor jongeren.',
+      informatieUrl: '',
+      informatieButtonText: 'Meer informatie',
+    },
+  },
 };
 
 const requiredKeys = [

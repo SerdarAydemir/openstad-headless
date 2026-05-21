@@ -1,0 +1,882 @@
+/* ============================================================
+   Fix Je Shit — Widget Styles
+   WCAG 2.1 AA Compliant | Mobile-first
+   ============================================================ */
+
+/* --- CSS Custom Properties (overridable via branding config) --- */
+
+.fjs-root {
+  --fjs-primary: #2f8f3f;
+  --fjs-error: #b71c1c;
+  --fjs-progress: #6d2909;
+  --fjs-score-complete: #22c55e;
+  --fjs-score-incomplete: #ef4444;
+  --fjs-warning: #d97706;
+  --fjs-bg: #f3f4f6;
+  --fjs-card-bg: #ffffff;
+  --fjs-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+
+  --fjs-text: #1f2937;
+  --fjs-text-secondary: #6b7280;
+  --fjs-border: #e5e7eb;
+  --fjs-radius: 16px;
+  --fjs-radius-sm: 8px;
+  --fjs-radius-pill: 999px;
+  --fjs-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --fjs-shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --fjs-transition: 0.2s ease;
+
+  font-family: var(--fjs-font);
+  color: var(--fjs-text);
+  background: var(--fjs-bg);
+  min-height: 400px;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Reset within widget --- */
+.fjs-root *,
+.fjs-root *::before,
+.fjs-root *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .fjs-root * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   Cards
+   ============================================================ */
+
+.fjs-card {
+  background: var(--fjs-card-bg);
+  border-radius: var(--fjs-radius);
+  box-shadow: var(--fjs-shadow);
+  padding: 24px;
+  width: 100%;
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+
+.fjs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 4px;
+  margin-bottom: 8px;
+}
+
+.fjs-header-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--fjs-text);
+}
+
+.fjs-header-action {
+  background: none;
+  border: none;
+  color: var(--fjs-text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--fjs-radius-sm);
+  transition: background var(--fjs-transition);
+}
+
+.fjs-header-action:hover {
+  background: var(--fjs-border);
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+.fjs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 2px solid transparent;
+  border-radius: var(--fjs-radius-sm);
+  font-family: var(--fjs-font);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all var(--fjs-transition);
+  text-decoration: none;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.fjs-btn:focus-visible {
+  outline: 3px solid var(--fjs-primary);
+  outline-offset: 2px;
+}
+
+.fjs-btn-primary {
+  background: var(--fjs-primary);
+  color: #ffffff;
+  border-color: var(--fjs-primary);
+}
+
+.fjs-btn-primary:hover {
+  filter: brightness(0.9);
+}
+
+.fjs-btn-primary:active {
+  filter: brightness(0.8);
+  transform: scale(0.98);
+}
+
+.fjs-btn-outline {
+  background: transparent;
+  border-color: var(--fjs-border);
+  color: var(--fjs-text);
+}
+
+.fjs-btn-outline:hover {
+  background: var(--fjs-bg);
+}
+
+.fjs-btn-error {
+  border-color: var(--fjs-error);
+  color: var(--fjs-error);
+  background: transparent;
+}
+
+.fjs-btn-error:hover {
+  background: rgba(183, 28, 28, 0.06);
+}
+
+.fjs-btn-disabled {
+  background: var(--fjs-border);
+  color: #9ca3af;
+  border-color: var(--fjs-border);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.fjs-btn-lg {
+  padding: 14px 32px;
+  font-size: 16px;
+  border-radius: var(--fjs-radius);
+  width: 100%;
+}
+
+.fjs-btn-icon {
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   Landing Screen
+   ============================================================ */
+
+.fjs-landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+  padding: 24px 16px;
+}
+
+.fjs-landing-card {
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.fjs-landing-icon {
+  margin-bottom: 20px;
+}
+
+.fjs-landing-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--fjs-text);
+}
+
+.fjs-landing-description {
+  font-size: 16px;
+  color: var(--fjs-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 28px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fjs-landing-meta {
+  font-size: 14px;
+  color: var(--fjs-text-secondary);
+  margin-top: 12px;
+}
+
+/* ============================================================
+   Gemeente Selector
+   ============================================================ */
+
+.fjs-gemeente {
+  padding: 0 16px 24px;
+}
+
+.fjs-gemeente-card {
+  padding: 28px 24px;
+}
+
+.fjs-gemeente-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  color: var(--fjs-text);
+}
+
+.fjs-gemeente-search {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.fjs-search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fjs-search-icon {
+  position: absolute;
+  left: 14px;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.fjs-search-input {
+  width: 100%;
+  padding: 14px 14px 14px 44px;
+  border: 2px solid var(--fjs-border);
+  border-radius: var(--fjs-radius-sm);
+  font-family: var(--fjs-font);
+  font-size: 16px;
+  color: #475569;
+  background: var(--fjs-card-bg);
+  transition: border-color var(--fjs-transition);
+  -webkit-appearance: none;
+}
+
+.fjs-search-input::placeholder {
+  color: #9ca3af;
+}
+
+.fjs-search-input:focus {
+  outline: none;
+  border-color: var(--fjs-primary);
+  box-shadow: 0 0 0 3px rgba(47, 143, 63, 0.15);
+}
+
+.fjs-gemeente-list {
+  list-style: none;
+  border: 2px solid var(--fjs-border);
+  border-top: none;
+  border-radius: 0 0 var(--fjs-radius-sm) var(--fjs-radius-sm);
+  max-height: 200px;
+  overflow-y: auto;
+  background: var(--fjs-card-bg);
+}
+
+.fjs-gemeente-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: background var(--fjs-transition);
+  font-size: 16px;
+  color: var(--fjs-text);
+}
+
+.fjs-gemeente-item:hover,
+.fjs-gemeente-item--highlighted {
+  background: var(--fjs-bg);
+}
+
+.fjs-gemeente-item--selected {
+  background: rgba(47, 143, 63, 0.08);
+  font-weight: 600;
+}
+
+.fjs-gemeente-pin {
+  color: var(--fjs-text-secondary);
+  flex-shrink: 0;
+}
+
+.fjs-gemeente-item--selected .fjs-gemeente-pin {
+  color: var(--fjs-primary);
+}
+
+.fjs-gemeente-helper {
+  font-size: 13px;
+  color: var(--fjs-text-secondary);
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   Quiz
+   ============================================================ */
+
+.fjs-quiz {
+  padding: 0 16px 24px;
+  position: relative;
+}
+
+.fjs-quiz-container {
+  position: relative;
+}
+
+.fjs-quiz-card {
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Exit animations */
+.fjs-quiz-card--exit-left {
+  animation: fjs-exit-left 0.3s ease-out forwards;
+}
+
+.fjs-quiz-card--exit-right {
+  animation: fjs-exit-right 0.3s ease-out forwards;
+}
+
+@keyframes fjs-exit-left {
+  to {
+    transform: translateX(-120%) rotate(-15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fjs-exit-right {
+  to {
+    transform: translateX(120%) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+/* --- Progress Bar --- */
+
+.fjs-progress {
+  margin-bottom: 20px;
+}
+
+.fjs-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.fjs-progress-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fjs-text-secondary);
+}
+
+.fjs-progress-percent {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fjs-text-secondary);
+}
+
+.fjs-progress-track {
+  height: 6px;
+  background: var(--fjs-border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.fjs-progress-fill {
+  height: 100%;
+  background: var(--fjs-progress);
+  border-radius: 3px;
+  transition: width 0.4s ease-out;
+}
+
+/* --- Category Badge --- */
+
+.fjs-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border: 2px solid var(--fjs-progress);
+  border-radius: var(--fjs-radius-pill);
+  color: var(--fjs-progress);
+  margin-bottom: 16px;
+}
+
+/* --- Question --- */
+
+.fjs-quiz-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  color: var(--fjs-text);
+}
+
+.fjs-quiz-description {
+  font-size: 15px;
+  color: var(--fjs-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+/* --- Answer Options --- */
+
+.fjs-options {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.fjs-options--binary {
+  flex-direction: row;
+}
+
+.fjs-options--binary .fjs-btn {
+  flex: 1;
+  padding: 14px 16px;
+}
+
+.fjs-options--multi {
+  flex-direction: column;
+}
+
+.fjs-btn-multi {
+  width: 100%;
+  padding: 14px 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.fjs-btn-multi:hover {
+  border-color: var(--fjs-primary);
+  color: var(--fjs-primary);
+}
+
+/* --- Quiz Tip --- */
+
+.fjs-quiz-tip {
+  font-size: 13px;
+  color: #9ca3af;
+  text-align: center;
+  font-style: italic;
+}
+
+/* --- Back Button --- */
+
+.fjs-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: var(--fjs-text-secondary);
+  font-family: var(--fjs-font);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 4px;
+  margin-top: 12px;
+  border-radius: var(--fjs-radius-sm);
+  transition: color var(--fjs-transition);
+}
+
+.fjs-back-btn:hover {
+  color: var(--fjs-text);
+}
+
+.fjs-back-btn:focus-visible {
+  outline: 2px solid var(--fjs-primary);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   Swipe Onboarding
+   ============================================================ */
+
+.fjs-onboarding {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: var(--fjs-radius);
+  z-index: 10;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.fjs-onboarding--visible {
+  opacity: 1;
+}
+
+.fjs-onboarding--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fjs-onboarding-content {
+  text-align: center;
+}
+
+.fjs-onboarding-hand {
+  animation: fjs-swipe-hint 1.5s ease-in-out infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes fjs-swipe-hint {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(40px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-40px);
+  }
+}
+
+.fjs-onboarding-text {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================================
+   Dashboard
+   ============================================================ */
+
+.fjs-dashboard {
+  padding: 0 16px 32px;
+}
+
+/* --- Score Card --- */
+
+.fjs-score-card {
+  text-align: center;
+  padding: 32px 24px;
+  margin-bottom: 24px;
+}
+
+.fjs-score-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--fjs-text-secondary);
+  margin-bottom: 20px;
+}
+
+.fjs-score-circle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.fjs-score-value {
+  position: absolute;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.fjs-score-number {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--fjs-text);
+  line-height: 1;
+}
+
+.fjs-score-percent {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--fjs-text-secondary);
+}
+
+.fjs-score-description {
+  font-size: 15px;
+  color: var(--fjs-text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+/* --- Category Summary List --- */
+
+.fjs-category-list {
+  list-style: none;
+  border-top: 1px solid var(--fjs-border);
+  text-align: left;
+}
+
+.fjs-category-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--fjs-border);
+}
+
+.fjs-category-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--fjs-text);
+}
+
+.fjs-category-status {
+  display: flex;
+  align-items: center;
+}
+
+/* --- Sections --- */
+
+.fjs-section {
+  margin-bottom: 24px;
+}
+
+.fjs-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--fjs-text);
+  margin-bottom: 12px;
+}
+
+/* --- Action Cards --- */
+
+.fjs-action-card {
+  margin-bottom: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+.fjs-action-card--highlight {
+  box-shadow:
+    0 0 0 3px var(--fjs-primary),
+    var(--fjs-shadow-lg);
+}
+
+.fjs-action-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.fjs-action-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fjs-bg);
+  border-radius: var(--fjs-radius-sm);
+  color: var(--fjs-primary);
+}
+
+.fjs-action-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.fjs-action-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fjs-action-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fjs-text);
+}
+
+.fjs-priority-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fjs-error);
+  background: rgba(183, 28, 28, 0.08);
+  padding: 2px 8px;
+  border-radius: var(--fjs-radius-pill);
+}
+
+.fjs-action-description {
+  font-size: 14px;
+  color: var(--fjs-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.fjs-btn-action {
+  width: 100%;
+}
+
+/* --- Help Cards --- */
+
+.fjs-help-card {
+  margin-bottom: 12px;
+}
+
+.fjs-help-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.fjs-help-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fjs-bg);
+  border-radius: 50%;
+  color: var(--fjs-warning);
+}
+
+.fjs-help-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.fjs-help-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fjs-text);
+}
+
+.fjs-help-description {
+  font-size: 14px;
+  color: var(--fjs-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.fjs-btn-help {
+  width: 100%;
+}
+
+/* --- Share Actions --- */
+
+.fjs-share-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.fjs-btn-share {
+  width: 100%;
+  justify-content: center;
+}
+
+.fjs-btn-start-fixen {
+  margin-top: 4px;
+}
+
+/* --- Tip Card --- */
+
+.fjs-tip-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+}
+
+.fjs-tip-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.fjs-tip-card strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--fjs-text);
+  margin-bottom: 4px;
+}
+
+.fjs-tip-text {
+  font-size: 14px;
+  color: var(--fjs-text-secondary);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .fjs-root {
+    max-width: 100%;
+  }
+
+  .fjs-landing-card {
+    padding: 32px 20px;
+  }
+
+  .fjs-landing-title {
+    font-size: 24px;
+  }
+
+  .fjs-quiz-title {
+    font-size: 20px;
+  }
+
+  .fjs-options--binary {
+    flex-direction: row;
+  }
+
+  .fjs-options--binary .fjs-btn {
+    padding: 12px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .fjs-root {
+    max-width: 480px;
+  }
+}
+
+@media (min-width: 769px) {
+  .fjs-root {
+    max-width: 480px;
+  }
+}
